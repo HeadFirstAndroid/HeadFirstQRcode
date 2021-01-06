@@ -6,13 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/showQRCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/genQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="#eeeeee"
+        android:gravity="center"
+        android:onClick="testGenQRCode"
+        android:text="测试生成二维码"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showQRCode" />
+
+    <TextView
+        android:id="@+id/scanQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="#eeeeee"
+        android:gravity="center"
+        android:onClick="testScanQRCode"
+        android:text="测试扫描二维码"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genQRCode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

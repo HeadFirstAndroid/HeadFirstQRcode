@@ -1,2 +1,3 @@
+include ':zxing'
 include ':app'
 rootProject.name = "HeadFirstQRcode"
