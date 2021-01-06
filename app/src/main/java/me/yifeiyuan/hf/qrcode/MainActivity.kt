@@ -1,11 +1,13 @@
 package me.yifeiyuan.hf.qrcode
 
 import android.content.Intent
+import android.os.Binder
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import me.yifeiyuan.hf.qrcode.databinding.ActivityMainBinding
 import me.yifeiyuan.hf.zxing.CaptureActivity
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        setContentView(R.layout.activity_main)
 
+        try {
+            val method = Binder::class.java.getDeclaredMethod("enableTracing")
+            method.isAccessible = true
+            method.invoke(null)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun testGenQRCode(v: View) {
